@@ -28,17 +28,17 @@ class ViewController: UIViewController {
     
     @IBAction func whenTapped(_ sender: UITapGestureRecognizer) {
         let selectedPoint = ((sender as! AnyObject).location(in: stackView))
-        getAndSetCurrentLetter()
+        //getAndSetCurrentLetter()
         
         currentLetter = letters[counter]
         currentLetterLabel.text = currentLetter
         
        
-        print(selectedPoint)
-        counter += 1
-        currentLetter = letters[counter]
-        currentLetterLabel.text = currentLetter
-        counter += 1
+//        print(selectedPoint)
+//        counter += 1
+//        currentLetter = letters[counter]
+//        currentLetterLabel.text = currentLetter
+//        counter += 1
         getAndSetCurrentLetter()
         
         if counter == 26 {
@@ -61,15 +61,15 @@ class ViewController: UIViewController {
         
           
         func getAndSetCurrentLetter() {
-            for label in letterOne
-            {
+//            for label in letterOne
+//            {
+//
+//
                 
-                
-                
-                func getAndSetCurrentLetter() {
-                    currentLetter = letters[counter]
-                    currentLetterLabel.text = currentLetter
-                }
+//                func getAndSetCurrentLetter() {
+//                    currentLetter = letters[counter]
+//                    currentLetterLabel.text = currentLetter
+//                }
                 
                 for label in letterOne {
                     if label.frame.contains(selectedPoint) {
@@ -78,14 +78,14 @@ class ViewController: UIViewController {
                     }
                 }
                 
-                if label.frame.contains(selectedPoint) {
-                    label.text = "\(currentLetter!)"
-                }
+//                if label.frame.contains(selectedPoint) {
+//                    label.text = "\(currentLetter!)"
+//                }
             }
             counter += 1
-            if counter == 26 {
-                counter = resetCounter()
-            }
+//            if counter == 26 {
+//                counter = resetCounter()
+//            }
            
         }
                 
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         
         
         
-    }
+    
     
     
     
