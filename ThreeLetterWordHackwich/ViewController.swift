@@ -25,28 +25,42 @@ class ViewController: UIViewController {
     ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     var counter: Int = 0
     var currentLetter: String!
+   
     
     @IBAction func whenTapped(_ sender: UITapGestureRecognizer) {
-        let selectedPoint = ((sender as! AnyObject).location(in: stackView))
+     
         //getAndSetCurrentLetter()
         
         currentLetter = letters[counter]
         currentLetterLabel.text = currentLetter
+        let selectedPoint = ((sender as! AnyObject).location(in: stackView))
+            for label in letterOne {
+                if label.frame.contains(selectedPoint) {
+                   label.text = "\(currentLetter!)"
+            
+                }
+            }
         
-       
-//        print(selectedPoint)
-//        counter += 1
-//        currentLetter = letters[counter]
-//        currentLetterLabel.text = currentLetter
-//        counter += 1
+        //        print(selectedPoint)
+        //        counter += 1
+        //        currentLetter = letters[counter]
+        //        currentLetterLabel.text = currentLetter
+              counter += 1
         getAndSetCurrentLetter()
         
         if counter == 26 {
+            
             for label in self.letterOne
             {
                 label.text = "?"
             }
-   
+            counter = resetCounter()
+            currentLetter = letters[0]
+    
+            currentLetterLabel.text = currentLetter
+            
+        }
+        
     }
         
         func resetCounter () -> Int {
@@ -70,19 +84,13 @@ class ViewController: UIViewController {
 //                    currentLetter = letters[counter]
 //                    currentLetterLabel.text = currentLetter
 //                }
-                
-                for label in letterOne {
-                    if label.frame.contains(selectedPoint) {
-                       label.text = "\(currentLetter!)"
-                
-                    }
-                }
+           
                 
 //                if label.frame.contains(selectedPoint) {
 //                    label.text = "\(currentLetter!)"
 //                }
             }
-            counter += 1
+      //      counter += 1
 //            if counter == 26 {
 //                counter = resetCounter()
 //            }
@@ -94,7 +102,7 @@ class ViewController: UIViewController {
                 
                 
                 
-            }
+            
         
         
         
